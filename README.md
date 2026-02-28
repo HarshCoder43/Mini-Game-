@@ -1,1 +1,1 @@
-# Mini-Game-
+This is a 2D space shooter game inspired by classic arcade games like Space Invaders. The game is built using HTML5 Canvas for rendering, JavaScript for game logic and mechanics, and CSS for styling and layout. It includes features like player movement, shooting system, enemy waves, level progression, particle effects, and score tracking. The project demonstrates core game development concepts such as animation loops, collision detection, and interactive UI design using pure web technologies.
