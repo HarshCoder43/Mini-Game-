@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e8e3df;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 15px;
+  color: #434343;
+  line-height: 1.6;
+}
+
+a {
+  color: #fa5c5c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.page-outer {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px 60px;
+}
+
+.page-content {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  max-width: 1060px;
+  align-items: flex-start;
+}
+
+.main-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-frame-wrap {
+  position: relative;
+  background: #000;
+  width: 100%;
+  line-height: 0;
+}
+
+.game-frame-wrap canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.game-overlay-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: space-between;
+  padding: 10px 14px;
+  color: #6ab8d8;
+  font-size: 12px;
+  letter-spacing: 2px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 5;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+.game-overlay-menu,
+.game-overlay-gameover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  font-family: "Courier New", monospace;
+}
+
+.game-overlay-menu h2 {
+  font-size: clamp(18px, 3.5vw, 40px);
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: #4499ff;
+  text-shadow: 0 0 16px rgba(68, 153, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.game-overlay-menu p {
+  color: #666;
+  letter-spacing: 3px;
+  font-size: clamp(9px, 1.2vw, 12px);
+  margin-bottom: 36px;
+}
+
+.game-btn {
+  display: block;
+  margin: 8px auto;
+  padding: 8px 0;
+  width: 180px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: clamp(14px, 2.2vw, 20px);
+  letter-spacing: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  transition:
+    color 0.15s,
+    text-shadow 0.15s;
+}
+.game-btn:hover {
+  color: #4499ff;
+  text-shadow: 0 0 15px #4499ff;
+}
+
+.game-overlay-gameover {
+  display: none;
+}
+.game-overlay-gameover h2 {
+  font-size: clamp(16px, 3vw, 34px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: #4499ff;
+  text-shadow: 0 0 12px #4499ff;
+  margin-bottom: 16px;
+}
+.game-overlay-gameover .go-score {
+  color: #4499ff;
+  font-size: clamp(14px, 2.2vw, 22px);
+  letter-spacing: 6px;
+  margin-bottom: 36px;
+  font-weight: 700;
+}
+
+.level-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", monospace;
+  color: #7ec8e3;
+  font-size: clamp(16px, 2.5vw, 28px);
+  letter-spacing: 8px;
+  text-shadow: 0 0 24px #7ec8e3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 10;
+  font-weight: 700;
+}
+
+.desc-section {
+  background: #fff;
+  padding: 24px 28px;
+  margin-top: 0;
+}
+
+.desc-section p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.desc-section ul {
+  margin: 0 0 14px 20px;
+  color: #555;
+}
+
+.desc-section ul li {
+  margin-bottom: 4px;
+}
+
+.more-info-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fa5c5c;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 6px;
+  user-select: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+.more-info-toggle:hover {
+  text-decoration: underline;
+}
+.arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+  font-size: 12px;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.more-info-table {
+  display: none;
+  margin-top: 14px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.more-info-table.visible {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+.more-info-table tr {
+  border-bottom: 1px solid #e8e8e8;
+}
+.more-info-table tr:last-child {
+  border-bottom: none;
+}
+.more-info-table td {
+  padding: 8px 14px;
+  font-size: 13px;
+  vertical-align: top;
+  color: #555;
+}
+.more-info-table td:first-child {
+  text-align: right;
+  width: 110px;
+  color: #888;
+  font-size: 12px;
+  padding-right: 12px;
+  white-space: nowrap;
+}
+.more-info-table td a {
+  color: #fa5c5c;
+}
+.stars {
+  color: #fa5c5c;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.comment-section {
+  background: #fff;
+  padding: 24px 28px;
+  margin-top: 20px;
+}
+.comment-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
+.comment-section p {
+  color: #777;
+  font-size: 14px;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 210px;
+  padding: 11px 16px;
+  background: #494949;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  font-family: inherit;
+  margin-bottom: 10px;
+  transition: background 0.15s;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+.sidebar-btn:hover {
+  background: #5c5c5c;
+}
+.sidebar-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #fff;
+}
+
+.page-footer {
+  background: #e0dbd5;
+  border-top: 1px solid #ccc8c2;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #888;
+}
+.page-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.page-footer-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+}
+.page-footer-left .logo img {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+.page-footer .sep {
+  color: #bbb;
+}
+.page-footer a {
+  color: #888;
+}
+.page-footer a:hover {
+  color: #fa5c5c;
+  text-decoration: underline;
+}
+.breadcrumb {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #aaa;
+  font-size: 13px;
+}
+.breadcrumb a {
+  color: #aaa;
+}
+.breadcrumb span {
+  color: #ccc;
+}

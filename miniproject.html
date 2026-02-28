@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laser Defender by gamedevtv</title>
+<link rel="stylesheet" href="MP.css">
+</head>
+<body>
+
+<div class="page-outer">
+<div class="page-content">
+
+    <div class="main-col">
+<div class="game-frame-wrap">
+        <canvas id="c" width="780" height="580"></canvas>
+
+        <div class="game-overlay-ui" id="ui">
+        <span id="score-ui">SCORE: 0</span>
+        <span id="level-ui">LEVEL: 1</span>
+        <span id="lives-ui">LIVES: ♥️♥️♥️</span>
+        </div>
+
+        <div class="game-overlay-menu" id="menu">
+        <h2>LASER DEFENDER</h2>
+        <p>DEFEND THE EARTH FROM AN ALIEN INVASION</p>
+        <button class="game-btn" onclick="startGame()">START</button>
+        <button class="game-btn">QUIT</button>
+        </div>
+
+        <div class="game-overlay-gameover" id="gameover">
+        <h2>YOU WERE SHOT DOWN!</h2>
+        <div class="go-score" id="final-score">SCORE: 0</div>
+        <button class="game-btn" onclick="startGame()">PLAY AGAIN</button>
+        </div>
+
+        <div class="level-banner" id="level-banner">LEVEL 1</div>
+    </div>
+
+    <div class="desc-section">
+        <p>Inspired by classics like Space Invaders, this 2D Space shooter game built in Unity 3D will teach you many things including...u</p>
+        <ul>
+        <li>How to use the Mecanim animation framework</li>
+        <li>How to create particle systems for special effects</li>
+        <li>Using Trigger colliders in your scene</li>
+        <li>Making every level have its own musical style</li>
+        <li>... and much more</li>
+        </ul>
+        <p>Want to learn to build this game from scratch? Our 20+ hour online course will take you through everything you need to know.<br>
+        <a href="#">Start coding games now.</a></p>
+
+        <button class="more-info-toggle" onclick="toggleMoreInfo()">
+More information <span class="arrow" id="arrow">▾</span>
+        </button>
+
+        <table class="more-info-table" id="more-info-table">
+        <tr><td>Status</td><td><a href="#">Released</a></td></tr>
+        <tr><td>Platforms</td><td><a href="#">HTML5</a></td></tr>
+        <tr><td>Rating</td><td><span class="stars">★★★★★</span> (1)</td></tr>
+        <tr><td>Author</td><td><a href="#">gamedevtv</a></td></tr>
+        <tr><td>Genre</td><td><a href="#">Action</a></td></tr>
+        <tr><td>Made with</td><td><a href="#">Unity</a></td></tr>
+        <tr><td>Tags</td><td><a href="#">Retro</a></td></tr>
+        </table>
+    </div>
+
+    <div class="comment-section">
+        <h3>Leave a comment</h3>
+        <p><a href="#">Log in with itch.io</a> to leave a comment.</p>
+    </div>
+    </div>
+
+    <div class="sidebar">
+    <button class="sidebar-btn">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        View all by gamedevtv
+    </button>
+    <button class="sidebar-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        Follow gamedevtv
+    </button>
+    <button class="sidebar-btn">
+        <svg viewBox="0 0 24 24"><path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        Add To Collection
+    </button>
+    </div>
+
+</div>
+</div>
+
+<div class="page-footer">
+<div class="page-footer-left">
+    <div class="logo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fa5c5c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    itch.io
+    </div>
+    <span class="sep">·</span>
+    <a href="#">View all by gamedevtv</a>
+    <span class="sep">·</span>
+    <a href="#">Report</a>
+    <span class="sep">·</span>
+    <a href="#">Embed</a>
+</div>
+<div class="breadcrumb">
+    <a href="#">Games</a> <span>›</span>
+    <a href="#">Action</a> <span>›</span>
+    <span>Free</span>
+</div>
+<script src="MP.js"></script>
+</div>
+</body>
+</html>
